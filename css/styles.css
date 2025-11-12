@@ -1,3 +1,11 @@
+/* CSS Değişkenleri - SVG renkleri için */
+:root {
+  --color1: #f4f4fd;
+  --color2: #2e2f42;
+  --color3: #fff;
+  --color4: #4d5ae5;
+}
+
 /* Genel Reset */
 * {
   margin: 0;
@@ -443,7 +451,7 @@ footer p {
   background-color: #31D0AA;
 }
 
-/* Footer Subscribe - DÜZELTİLMİŞ */
+/* Footer Subscribe */
 .footer-subscribe {
   width: 453px;
   height: 80px;
@@ -576,7 +584,8 @@ footer p {
               border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-btn:hover {
+.modal-close-btn:hover,
+.modal-close-btn:focus {
   background-color: #404BBF;
   border-color: #404BBF;
 }
@@ -588,7 +597,8 @@ footer p {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-btn:hover .modal-close-icon {
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
   fill: #FFFFFF;
 }
 
@@ -643,19 +653,21 @@ footer p {
   border-color: #4D5AE5;
 }
 
+/* DÜZELTİLMİŞ: Modal ikonları için doğru CSS selector */
 .form-icon {
   position: absolute;
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
   width: 18px;
-  height: 24px;
-  fill: #2E2F42;
+  height: 18px;
+  fill: #2E2F42; /* Normal durumda 2E2F42 rengi */
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus + .form-icon {
-  fill: #4D5AE5;
+/* DÜZELTİLMİŞ: Input focus olduğunda ikon rengi değişecek */
+.input-container:focus-within .form-icon {
+  fill: #4D5AE5; /* Focus durumunda mavi renk */
 }
 
 .form-textarea {
@@ -680,7 +692,7 @@ footer p {
   color: rgba(46, 47, 66, 0.4);
 }
 
-/* Checkbox */
+/* Checkbox - DÜZELTİLMİŞ */
 .checkbox-field {
   margin-top: 16px;
   margin-bottom: 24px;
@@ -718,6 +730,7 @@ footer p {
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
+  background-color: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
               border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
@@ -726,7 +739,7 @@ footer p {
 .checkbox-icon {
   width: 10px;
   height: 8px;
-  fill: #FFFFFF;
+  fill: #FFFFFF; /* Beyaz tik */
   opacity: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
